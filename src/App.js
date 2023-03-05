@@ -58,8 +58,12 @@ const AppWarp = styled.div`
     left: 50%;
     top: 50%;
     tanform: translate(-50%, -50%);
-    border: 1px blue solid;
     padding: 20px;
+  }
+  input {
+    padding: 16px;
+    border: 2px black solid;
+    border-radius: 16px;
   }
 `;
 
@@ -68,4 +72,17 @@ const ResultWrap = styled.div`
   padding: 10px;
   border: 1px black solid;
   border-radius: 8px;
+
+  .city {
+    font-size: 24px;
+  }
+  .temperature {
+    font-size: 60px;
+    margin-top: 8px;
+  }
+  .sky {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 8px;
+  }
 `;

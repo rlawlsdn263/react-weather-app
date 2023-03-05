@@ -33,11 +33,13 @@ function App() {
           type="text"
           onKeyDown={searchWeather}
         />
-        <ResultWrap>
-          <div className="city"></div>
-          <div className="temperature"></div>
-          <div className="weather"></div>
-        </ResultWrap>
+        {Object.keys(result).length !== 0 && (
+          <ResultWrap>
+            <div className="city">{result.data.name}</div>
+            <div className="temperature">{result.data.main.temp}</div>
+            <div className="weather">{result.data.weather[0].main}</div>
+          </ResultWrap>
+        )}
       </div>
     </AppWarp>
   );

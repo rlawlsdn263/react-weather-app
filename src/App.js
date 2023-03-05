@@ -5,6 +5,7 @@ import axios from "axios";
 function App() {
   const API_KEY = "1144f627ca7622ff01372e0335e00e1b";
   const [location, setLocation] = useState("");
+  const [result, setResult] = useState({});
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
 
   const searchWeather = async (e) => {
@@ -15,6 +16,7 @@ function App() {
           url: url,
         });
         console.log(data);
+        setResult(data);
       } catch (err) {
         alert(err);
       }

@@ -31,6 +31,11 @@ function App() {
           type="text"
           onKeyDown={searchWeather}
         />
+        <ResultWrap>
+          <div className="city"></div>
+          <div className="temperature"></div>
+          <div className="weather"></div>
+        </ResultWrap>
       </div>
     </AppWarp>
   );
@@ -52,4 +57,11 @@ const AppWarp = styled.div`
     border: 1px blue solid;
     padding: 20px;
   }
+`;
+
+const ResultWrap = styled.div`
+  margin-top: 60px;
+  padding: 10px;
+  border: 1px black solid;
+  border-radius: 8px;
 `;

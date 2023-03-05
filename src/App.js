@@ -1,10 +1,26 @@
 import { useState } from "react";
 import styled from "styled-components";
+import axios from "axios";
 
 function App() {
-  const URL = `https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=1144f627ca7622ff01372e0335e00e1b`;
+  // const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
+  // const API_KEY = "1144f627ca7622ff01372e0335e00e1b";
 
   const [location, setLocation] = useState("");
+
+  const searchWeather = async (e) => {
+    if (e.key === "Enter") {
+      try {
+        const data = await axios({
+          method: "get",
+          url: url,
+        });
+        console.log(data);
+      } catch (err) {
+        alert(err);
+      }
+    }
+  };
 
   return (
     <AppWarp>
@@ -14,7 +30,8 @@ function App() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           type="text"
-        ></input>
+          onKeyDown={searchWeather}
+        />
       </div>
     </AppWarp>
   );

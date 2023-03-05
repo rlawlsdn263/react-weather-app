@@ -1,12 +1,20 @@
+import { useState } from "react";
 import styled from "styled-components";
 
 function App() {
   const URL = `https://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=1144f627ca7622ff01372e0335e00e1b`;
 
+  const [location, setLocation] = useState("");
+
   return (
     <AppWarp>
       <div className="appContentWrap">
-        <input placeholder="도시를 입력하세요"></input>
+        <input
+          placeholder="도시를 입력하세요"
+          value={location}
+          onChange={(e) => setLocation(e.target.value)}
+          type="text"
+        ></input>
       </div>
     </AppWarp>
   );
